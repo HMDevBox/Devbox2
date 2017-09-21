@@ -1,0 +1,255 @@
+<apex:page showHeader="false" sidebar="false" showChat="false" controller="CadenceSSOController" language="{!cadencesiteuserlang}">
+<script>
+    function changelangstyle()
+    {
+        document.getElementById("langprefpanel").className = "langselethoverstyle";
+    }
+    function changelangtooldstyle()
+    {
+        document.getElementById("langprefpanel").className = "langseletstyle";
+    }
+</script>
+<style>
+    .cadencepageheaderstyle{
+        width : 100%;
+        height : 80px;
+        border-bottom : outset;
+        border-width : 1px;
+        background: linear-gradient(white, #E6E6E6);
+    }
+    .cadencelogostyle{
+        position : absolute;
+        left : 200px;
+    }
+    .langseletstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : blue;
+    }
+    .langselethoverstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : red;
+        opacity: 0.5;
+    }
+    .loginpagebodystyle{
+        position : absolute;
+        left : 200px;
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        margin-top : 20px;
+        border-radius : 10px;
+    }
+    .loginleftpanelstyle{
+        background: linear-gradient(white, #E6E6E6);
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .loginrightpanelstyle{
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .cadenpagefooterstyle{
+        width : 100%;
+        border-top : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        position : relative;
+        margin-top : 550px;
+    }
+    .cadenfootercontentstyle{
+        position : absolute;
+        left : 200px;
+        color : silver;
+    }
+    .appnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 100px;
+    }
+    .rightappnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 100px;
+        color : #CB4154;
+    }
+    .labelheaderstyle{
+        font-weight:bold;
+        margin:20px;
+        position:relative;
+        top:20px;
+        font-family:"Arial Black", Gadget, sans-serif;
+        font-size:12px;
+    }
+    .labelbodystyle{
+        width:400px;
+        margin:20px;
+        position:relative;
+        top:-0px;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        text-align: justify;
+    }
+    .tablefieldstyle{
+        margin:20px;
+    }
+    .labelfieldstyle{
+        text-align : right;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        font-weight:bold;
+    }
+    .cadencelogintxtboxstyle{
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        border-radius : 5px;
+        width : 200px;
+    }
+    .cadencebtnstyle{
+        width:60px;
+        height:20px;
+    }
+</style>
+<html>
+    <apex:form >
+    <title>Login</title>
+    <body>
+        <apex:actionFunction name="funChangeLang" action="{!changedispalylanguage}"/>
+        <div id="cadencepageheader" class="cadencepageheaderstyle">
+            <div class="cadencelogostyle">
+               <!-- <apex:image url="{!URLFOR($Resource.MyTest, 'images/homeBox1.png')}" title="Cadence Design Systems"/> -->
+                 <apex:image url="{!$Resource.Cadencelogo}" title="Cadence Design Systems"/> 
+            </div>
+            <div id="langprefpanel" class="langseletstyle" onmouseover="changelangstyle();" onmouseout="changelangtooldstyle();" onclick="funChangeLang();">
+                <apex:outputText Value="English User" rendered="{!cadencesiteuserlang=='ja'}"></apex:outputText>
+                <apex:outputText Value="Japanese User " rendered="{!cadencesiteuserlang=='en'}"></apex:outputText>
+            </div>
+        </div>
+        <div id="loginpagebody" class="loginpagebodystyle">
+            <table cellspacing="0px">
+                <tr>
+                    <td>
+                        <div id="loginleftpanel" class="loginleftpanelstyle">
+                            <apex:outputText styleClass="appnamestyle" escape="false" value="{!cadenceAppName}"></apex:outputText>
+                            <div class="labelheaderstyle">
+                                Overview
+                            </div>
+                            <div class="labelbodystyle">
+                                <apex:outputtext escape="false" lang="{!cadencesiteuserlang}" value="{!$Label.Cadence_Online_Support_Overview}">
+                                </apex:outputtext>
+                            </div>
+                            <div class="labelheaderstyle">
+                                Supported Browsers:
+                            </div>
+                            <div class="labelbodystyle">
+                                <apex:outputText escape="false" value="{!$Label.Cadence_Supported_Browsers}"></apex:outputText>
+                            </div>
+                            <div class="labelheaderstyle">
+                                Important – Please Read:
+                            </div>
+                            <div class="labelbodystyle">
+                                <apex:outputText escape="false" value="{!$Label.Cadence_Online_Support_Important_Msg}"></apex:outputText>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="loginrightpanel" class="loginrightpanelstyle">
+                            <apex:outputText styleClass="rightappnamestyle" escape="false" value="Cadence Log In"></apex:outputText>
+                            <div class="labelbodystyle">
+                                <apex:outputtext escape="false" lang="{!cadencesiteuserlang}" value="{!$Label.Cadence_Login_Message}">
+                                </apex:outputtext>
+                            </div>
+                            <table class="tablefieldstyle">
+                                <tr>
+                                    <td class="labelfieldstyle">
+                                        Email
+                                    </td>
+                                    <td>
+                                        <apex:inputText styleclass="cadencelogintxtboxstyle" value="{!cadenceintextuser.Email}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="labelfieldstyle">
+                                        Password
+                                    </td>
+                                    <td>
+                                        <apex:inputsecret styleclass="cadencelogintxtboxstyle" value="{!userpwd}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <apex:commandButton styleClass="cadencebtnstyle" image="{!$Resource.CadenceLoginBtn}" action="{!btnCSSOLogin}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <apex:commandLink action="{!lnkCadenceForgetPwd}" value="Forget Password"/>
+                                        <br/>
+                                        <div>
+                                            <apex:outputText escape="false" value="{!$Label.Cadence_Forget_Password}"></apex:outputText>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="labelheaderstyle">
+                                New User?
+                            </div>
+                            <div class="labelbodystyle">
+                                <apex:commandLink value="Register Now" action="{!lnkCadenceRegisterNewUser}"/>
+                                <br/>
+                                <apex:outputText escape="false" value="{!$Label.Cadence_New_User_Msg}"></apex:outputText>
+                            </div>
+                            <div class="labelheaderstyle">
+                                Registration Help
+                            </div>
+                            <div class="labelbodystyle">
+                                <apex:outputText escape="false" value="{!$Label.Cadence_Registration_Help_Msg}"></apex:outputText>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="cadenpagefooter" class="cadenpagefooterstyle">
+            <div class="cadenfootercontentstyle">
+            © Cadence Design Systems, Inc. All Rights Reserved.
+            </div>
+        </div>
+    </body>
+    </apex:form>
+</html>
+</apex:page>

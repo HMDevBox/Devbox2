@@ -1,0 +1,6 @@
+<apex:page standardController="Book__c" extensions="MyBookClass" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1><br/>
+  This is your new book creation
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page standardController="lead">
+<apex:form >
+    <apex:pageblock >        
+    <apex:pageBlockButtons location="Bottom" >                
+        <apex:commandButton value="save" action="{!save}"/>
+          
+        <apex:commandButton value="cancel" action="{!cancel}"/>                  
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection columns="3" title="Lead Information" >                
+            
+            <apex:inputField value="{!lead.LeadSource}" />
+            <apex:inputField value="{!lead.Salutation}" required="true"/>
+            <apex:inputField value="{!lead.FirstName}" required="true"/>  
+            <apex:inputField value="{!lead.LastName}"/>
+            <apex:inputField value="{!lead.Status}"/>
+            <apex:inputField value="{!lead.Company}" />
+            <apex:inputField value="{!lead.Date_Of_Birth__c}" />
+            <apex:inputField value="{!lead.Gender__c }" />
+            <apex:inputField value="{!lead.Martial_Status__c}" /> 
+            <apex:inputField value="{!lead.Occupation__c}"/>
+            <apex:inputField value="{!lead.Phone}" />
+            <apex:inputField value="{!lead.MobilePhone}" />
+            <apex:inputField value="{!lead.Email}"/>
+            
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="3" title="Address Information">
+            <apex:inputField value="{!lead.Street}"/>
+            
+            <apex:inputField value="{!lead.City}"/>
+            <apex:inputField value="{!lead.State}" />
+            <apex:inputField value="{!lead.Country}"/>
+            <apex:inputField value="{!lead.PostalCode}" />
+            
+        </apex:pageBlockSection>
+       
+        
+        
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="outfieldcontroller">
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <p>This is your new Page</p>
+  <!-- End Default Content REMOVE THIS -->
+ name <apex:inputField value="{!acc.name}" onchange="js1()"/>
+ <apex:actionFunction name="js" action="{!getvalues}"/>
+ <script>
+ function js1(){
+ js();
+ }
+ </script>
+ 
+  account number<apex:outputField value="{!acc.accountnumber}" />
+  </apex:form>
+</apex:page>

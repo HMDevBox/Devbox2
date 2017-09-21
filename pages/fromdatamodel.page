@@ -1,0 +1,15 @@
+<apex:page controller="gettingbook1">
+  <h1>Congratulations</h1>
+  This is your new Page
+<apex:dataTable value="{!book1}" var="b" rows="5" columns="3" border="1" cellpadding="10">
+    <apex:column headerValue="Title" >
+          <apex:outputtext value="{!b.Title__c}" />
+    </apex:column>
+    <apex:column headerValue="Author">
+        <apex:outputtext value="{!b.Author__c}"/>
+    </apex:column>
+    <apex:column headerValue="price">
+        <apex:outputtext value="{!b.Price__c}"/> 
+    </apex:column>
+</apex:dataTable>  
+</apex:page>

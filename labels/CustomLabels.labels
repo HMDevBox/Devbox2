@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Cadence_Forget_Password</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Forget Password</shortDescription>
+        <value>Just enter your Email and click on the &apos;Forgot your password?&apos; link.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_HostId_Info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence HostId Info</shortDescription>
+        <value>Enter Your Cadence License Server Host Id. If a Reference Key has been Provided by your software provider.You may use that instead.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_Login_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Login Message</shortDescription>
+        <value>Cadence uses a single Login ID for all applications. You will use the same Login ID and password for each application you are registered with.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_New_User_Msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence New User Msg</shortDescription>
+        <value>A single Cadence account can be used to access numerous Cadence online resources. Access to certain sections of Cadence&apos;s website may be limited.
+&lt;br/&gt;
+To register for support on Cadence IP, please work with your IP Sales or AE contact.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_Online_Support_Important_Msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Online Support Important Msg</shortDescription>
+        <value>If on first login/page access you see formatting issues – please do a page refresh. This will be a one time activity and future page loads should work fine.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_Online_Support_Overview</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Online Support Overview</shortDescription>
+        <value>Cadence Online Support provides access to support resources including an extensive knowledge base, access to software updates for Cadence products, and the ability to interact with Cadence Customer Support.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_Registration_Help_Msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Registration Help Msg</shortDescription>
+        <value>Having trouble with registration?
+&lt;br/&gt;
+Click on the Help link on the top right corner of the page to find answers to questions and typical problems you might face during the registration process.</value>
+    </labels>
+    <labels>
+        <fullName>Cadence_Supported_Browsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cadence Supported Browsers</shortDescription>
+        <value>Internet Explorer 9.x and above
+&lt;br/&gt;
+Mozilla Firefox – 36.x and above
+&lt;br/&gt;
+Mozilla Firefox – 15.x and above (linux)
+&lt;br/&gt;
+Google Chrome – 40.x and above
+&lt;br/&gt;
+Safari
+&lt;br/&gt;
+IPad and Android Tablets (7” and above)</value>
+    </labels>
+    <labels>
+        <fullName>Error_Message</fullName>
+        <categories>For User Perspective</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Message</shortDescription>
+        <value>My First Custom Lable</value>
+    </labels>
+    <labels>
+        <fullName>Why_Cadence_regis</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Why Cadence regis</shortDescription>
+        <value>&lt;div&gt;
+A Cadence.com account is free and it only takes a few minutes. As a member, you will have access to features like:
+&lt;p/&gt;
+&lt;/br&gt;
+- Community participation
+&lt;/br&gt;
+- Email subscriptions
+&lt;/br&gt;
+- Downloads
+&lt;/br&gt;
+- Events and webinars
+&lt;/br&gt;
+&lt;/div&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Why_Reg_Jap</fullName>
+        <language>ja</language>
+        <protected>false</protected>
+        <shortDescription>Why Reg Jap</shortDescription>
+        <value>&lt;div&gt;
+Cadence.comアカウントは無料で、それがわずか数分かかります。加入すると、あなたのような機能にアクセスできるようになります：
+&lt;p/&gt;
+ - コミュニティの参加
+&lt;br/&gt;
+ - 電子メールサブスクリプション
+&lt;br/&gt;
+ - ダウンロード
+&lt;br/&gt;
+ - イベントとウェブセミナー
+&lt;div&gt;</value>
+    </labels>
+</CustomLabels>

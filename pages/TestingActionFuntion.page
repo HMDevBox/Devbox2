@@ -1,0 +1,17 @@
+<apex:page standardcontroller="account" extensions="afcontroller">
+<apex:form >
+  <apex:actionFunction name="javs" action="{!tv}" reRender="outputtxtId"/>
+  <apex:pageBlock >
+  <apex:inputtext value="{!firstvalue}" />   
+  
+<p>  <apex:inputtext value="{!secondvalue}" onblur="js1()"/>  </p>
+  </apex:pageBlock>
+  <apex:outputText value="{!takenvalue}" id="outputtxtId" > </apex:outputText>
+  <script>
+      function js1(){
+       javs(); 
+      }
+    </script>
+    
+    </apex:form>
+</apex:page>

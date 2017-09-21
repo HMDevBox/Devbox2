@@ -1,0 +1,12 @@
+<apex:page docType="html-5.0" standardController="account">
+  <apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <apex:pageBlock >
+  Date Field
+  <apex:inputfield value="{!account.SLA_Expiration_Date1__c}"/>
+  </apex:pageBlock>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  </apex:form>
+</apex:page>

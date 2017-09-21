@@ -1,0 +1,8 @@
+<apex:page controller="sfdctosfdccls" >
+{!url}
+
+<apex:iframe src="{!url}" height="1000px" rendered="{!acctsstoken}" />
+
+
+
+</apex:page>

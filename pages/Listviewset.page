@@ -1,0 +1,3 @@
+<apex:page standardController="case" sidebar="false">
+  <apex:enhancedList customizable="true" height="300" type="case" listId="00B90000008z7Qa"/>>
+</apex:page>

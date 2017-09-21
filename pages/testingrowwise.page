@@ -1,0 +1,15 @@
+<apex:page controller="controllermethod">
+ <apex:form >
+  <apex:pageBlock mode="edit"><br/><br/>
+        <div class="row">
+       <apex:outputLabel styleClass="label" value="Acount Name " /> 
+       <apex:inputField styleClass="field" value="{!newproj.Name}"/>
+       </div>
+       <div class="row">
+       <apex:outputLabel styleClass="label" value="phont "/> 
+       <apex:inputField styleClass="field" value="{!newproj.phone}"/>
+        </div>
+         <apex:commandButton value="Save" action="{!savecreatenew}"/>
+                 </apex:pageblock>
+        </apex:form>
+        </apex:page>

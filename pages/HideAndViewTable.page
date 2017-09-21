@@ -1,0 +1,46 @@
+<apex:page controller="mapvalues">
+<apex:includescript value="//code.jquery.com/jquery-1.11.1.min.js" />
+<apex:form >
+<html>
+<head>
+<script>
+$(document).ready(function() {
+     
+     alert('ok');               
+// document.getElementById("2").style.display = 'none';
+
+});  
+
+                  
+function toggle() {
+
+if( document.getElementById("2").style.visibility == 'visible'){
+   alert('ok1');
+   document.getElementById("2").style.visibility = 'hidden';
+}else{
+   alert('ok2');
+   document.getElementById("2").style.visibility = 'visible';
+}
+}
+</script>
+</head>
+<body>
+<span onClick="toggle();">toggle</span><br /><br />
+<table border="1">
+<apex:repeat value="{!str}" var="key">
+    <tr id="({!var} + 1)" style="visibility:visible;">
+    <td>
+    {!key}
+    </td>
+    </tr>
+    
+</apex:repeat>
+
+</table>
+
+</body>
+</html>
+
+</apex:form>
+
+</apex:page>

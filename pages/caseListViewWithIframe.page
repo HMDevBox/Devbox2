@@ -1,0 +1,35 @@
+<!-- <apex:page sidebar="false" showheader="false"> 
+<apex:iframe src="https://c.ap1.visual.force.com/500?fcf=00B90000003yXUV&isdtp=vw"/>
+</apex:page> -->   
+<!--
+<apex:page standardController="Case" recordSetVar="cases">
+    <apex:repeat value="{!cases}" var="c">
+        <apex:outputText value="{!c.Id}"/>
+    </apex:repeat>
+</apex:page> -->
+
+<apex:page controller="ListViewDemo1">
+
+  <apex:form id="pageForm">
+       <apex:selectList value="{!AccFilterId}" size="1" id="filterMenu">
+            <apex:selectOptions value="{!AccountExistingViews}"></apex:selectOptions>
+            <apex:actionSupport event="onchange"  action="{!resetFilter}" rerender="AccntTable" status="ajaxStatus"/>
+       </apex:selectList>
+
+       <apex:actionStatus id="ajaxStatus" startText="Loading..."  stopText=""/>
+
+     <apex:pageBlock title="cases">
+        <apex:pageBlockButtons >
+                <apex:commandButton action="{!firstPage}" value="|<<" reRender="AccntTable"  status="ajaxStatus" />
+                <apex:commandButton action="{!prev}" value="<" reRender="AccntTable"  status="ajaxStatus" />
+                <apex:commandButton action="{!next}" value=">" reRender="AccntTable"  status="ajaxStatus" />
+                <apex:commandButton action="{!lastPage}" value=">>|" reRender="AccntTable"  status="ajaxStatus" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockTable value="{!Accounts}" var="item" id="AccntTable">
+                <apex:column value="{!item.CaseNumber}"/>
+                
+            </apex:pageBlockTable>
+     </apex:pageBlock>
+   </apex:form>
+</apex:page>

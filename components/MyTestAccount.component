@@ -1,0 +1,28 @@
+<apex:component controller="UsingInEmailTemplate" access="global">
+  
+  <apex:attribute assignTo="{!accountid}" name="accid" type="id" description="Account Id"/>
+  <br/>
+  <apex:outputText value="{!accountid}"></apex:outputText>
+  <br/>
+  {!lstaccount}
+  <apex:dataTable value="{!lstAccount}" var="acc">
+
+        <apex:column >
+
+            <apex:facet name="header">Account Name</apex:facet>
+
+            {!acc.Name}
+
+        </apex:column>
+        
+        <apex:column >
+
+            <apex:facet name="header"> SLA</apex:facet>
+
+            {!acc.SLA__c}
+
+        </apex:column>
+
+    </apex:dataTable>
+
+</apex:component>

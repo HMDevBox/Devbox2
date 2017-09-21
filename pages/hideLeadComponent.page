@@ -1,0 +1,4 @@
+<apex:page standardController="Lead" extensions="hideLeadComponentClass" action="{!captureCallHistory}" 
+showHeader="true" tabStyle="Lead" sidebar="false">
+<apex:detail />
+</apex:page>

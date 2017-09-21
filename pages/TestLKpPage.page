@@ -1,0 +1,10 @@
+<apex:page StandardController="shipment__c" Extensions="TestLKP">
+<apex:form >
+<apex:pageblock > 
+&nbsp;
+<apex:inputField value="{!shp.supplier_number__c}" /> &nbsp;  
+<apex:commandButton value="Press" action="{!act}"/>
+
+</apex:pageblock>
+</apex:form>
+ </apex:page>

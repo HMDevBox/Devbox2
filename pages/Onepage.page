@@ -1,0 +1,14 @@
+<apex:page controller="Rectangle" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations </h1>
+  This is your new Page {!$User.FirstName} {!$User.LastName}
+  <apex:form >
+  Enter the length &nbsp;&nbsp; <apex:inputtext value="{!length}"/><br/>
+  Enter the breadth &nbsp;&nbsp;<apex:inputText value="{!breadth}"/><br/>
+  <apex:commandButton value="caluculate area" action="{!area}"/>&nbsp;&nbsp;&nbsp;
+  <apex:outputText value="{!area}"/><br/>
+  <apex:commandButton value="caluculate perimeter" action="{!perimeter}"/> &nbsp;&nbsp;&nbsp;
+  <apex:outputText value="{!perimeter}"/>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

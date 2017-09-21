@@ -1,0 +1,16 @@
+<apex:page standardcontroller="Account" recordSetVar="accounts">
+  <apex:pageBlock Title="Cash Denominations" >
+    <apex:repeat value="{!accounts}" var="b" >
+          <apex:pageBlockSection columns="1" >   
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="RS 1000" for="the1000"/>
+                 <apex:outputfield value="{!b.RS_1000__c}" id="the1000"/>
+           </apex:pageBlockSectionItem>       
+           <apex:pageBlockSectionItem >      
+                 <apex:outputLabel value="RS 100" for="the100"/>
+                 <apex:outputfield value="{!b.RS_100__c}" id="the100"/>
+           </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+ </apex:repeat>   
+ </apex:pageBlock>       
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="Rectangle">
+  <apex:pageBlock >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>This is My Rectangle Class</h1>
+  <apex:form > 
+  Enter the length &nbsp;&nbsp;<apex:inputText /><br/>
+  Enter the Braedth <apex:inputText /><br/>
+  <apex:commandButton value="Caluculate area" action="{!area}"/> <br/>
+  <apex:outputText value="{!area}" />  
+  <apex:commandButton value=" Caluculate perimeter"/> 
+  </apex:form>
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="newbankaccc">
+  <h1>Congratulations</h1>
+  <p>This is our bank account page</p>
+  <apex:form >
+  <apex:pageblock >
+  <apex:pageBlockSection >
+  Account Number
+  <apex:inputtext value="{!accno}" />
+  Account Holder Name &nbsp;
+  <apex:inputtext value="{!accname}"/>
+  <br>Account Balance &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+  <apex:inputtext value="{!balance}"/> </br>
+  Deposited amount  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputtext value="{!deposit}"/>
+  <br><apex:commandButton value="dp" action="{!dp}"/></br>
+  Withdraw Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputtext value="{!withdraw}"/>
+  <br><apex:commandButton value="wd" action="{!wd}"/></br>
+  </apex:pageBlockSection>
+  </apex:pageblock>
+  </apex:form>
+  </apex:page>

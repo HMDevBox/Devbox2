@@ -1,0 +1,7 @@
+<apex:page standardcontroller="Book__c" recordSetVar="books" id="thepage">
+        <apex:dataTable value="{!books}" var="b"  cellpadding="10" border="1" >           
+        <apex:column headervalue="Title name" value="{!b.Title__c}" /> 
+        <apex:column headervalue="Author" value="{!b.Author__c}"/>
+        <apex:column headervalue="price" value="{!b.Price__c}"/>
+        </apex:dataTable>
+</apex:page>

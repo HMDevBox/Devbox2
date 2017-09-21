@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Manual</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Manuals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Directory Name --></label>
+        <name>Directory_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>Custom IC Design</masterLabel>
+            <translation><!-- Custom IC Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design for Manufacturing</masterLabel>
+            <translation><!-- Design for Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital IC Design</masterLabel>
+            <translation><!-- Digital IC Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Functional Verification</masterLabel>
+            <translation><!-- Functional Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silicon-Package-Board Co-Design</masterLabel>
+            <translation><!-- Silicon-Package-Board Co-Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tensilica IP</masterLabel>
+            <translation><!-- Tensilica IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verification IP</masterLabel>
+            <translation><!-- Verification IP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Manual Name Order --></label>
+        <name>Product_Manual_Name_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Name --></label>
+        <name>Release_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Order --></label>
+        <name>Release_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top 5 --></label>
+        <name>Top_5__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

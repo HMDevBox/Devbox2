@@ -1,0 +1,17 @@
+<apex:page standardController="lead">
+<apex:form >
+<p> welcome <b id='id3' > </b> </p>
+<apex:inputField id="id1" value="{!lead.No_of_Thousands__c}"/>
+<apex:inputField id="id2" value="{!lead.No_Of_Hundreads__c}" onblur="fix(document.getElementById('{!$Component.id1}').value,this.value)"/>
+
+
+<script>
+function fix(var1,var2){
+alert(var1+"****"+var2);
+document.getElementById('id3').innerHtml = 'MALLI';
+
+}
+</script>
+
+</apex:form>
+</apex:page>

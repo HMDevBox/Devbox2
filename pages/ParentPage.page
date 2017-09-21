@@ -1,0 +1,70 @@
+<apex:page standardController="case" tabStyle="case" extensions="parentController">
+    
+    <apex:form id="myForm">
+    <apex:pageBlock mode="edit" id="PageBlock">
+    <Apex:pageMessages ></Apex:pageMessages>
+    <apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!saveMethod}"/>
+    </apex:pageBlockButtons>
+     <!--------Case  Details Section--------->
+                                  
+        <apex:pageBlockSection title="Case  Details" columns="2" id="pbsc" >
+            <apex:outputfield value="{!cse.CaseNumber}"/>
+            <apex:outputfield value="{!cse.Parentid}"/>
+            <apex:inputfield value="{!cse.Origin}" required="true"/>
+            <apex:outputfield value="{!cse.Subject}"/>
+            <apex:inputfield value="{!cse.Priority}" required="true" />
+            <apex:outputfield value="{!cse.Status}"/>    
+            <apex:outputfield value="{!cse.OwnerID}"/>
+        </apex:pageBlockSection>     
+        <!--------Customer Details Section--------->
+        <apex:actionRegion >                             
+        <apex:pageBlockSection title="Customer Details" id="pbsc1">
+             
+            <apex:inputfield value="{!cse.Name__c}" rendered="{!cse.Accountid!= null}" />  
+            
+            <!-- <apex:outputLabel value="{!$ObjectType.Case.fields.Name__c.label}" 
+                        for="Account" /> -->
+             <apex:actionRegion >  
+                 <apex:inputfield id="Account" value="{!cse.Accountid}" required="true" rendered="{!cse.Account_CheckBox__c == false}"> 
+                 <apex:actionSupport event="onchange" action="{!ContactInfm}" reRender="pbsc1,pbsc2,pbt"/>  
+                 </apex:inputfield>
+                 
+             </apex:actionRegion>                
+              <apex:outputfield value="{!cse.Accountid}" rendered="{!cse.Account_CheckBox__c == true}"/> 
+        
+        </apex:pageBlockSection>
+        </apex:actionRegion>  
+        <!------- similar case section ----------->
+        <apex:pageBlockSection id="pbsc2" title="Similar Cases" columns="1"> 
+        <apex:pageBlockTable id="pbt1" title="Similar Cases" value="{!lstSimilarCase}" var="c">
+        <apex:column width="20">
+            <apex:facet name="header">
+            <apex:inputCheckbox onclick="selectAll(this,'inputid')" />
+            </apex:facet> 
+            <apex:inputCheckbox id="inputid" value="{!c.CheckBox}" onchange="text(this);"/> 
+        </apex:column>
+        <apex:column headerValue="Case Number">
+            <apex:outputfield value="{!c.cs.CaseNumber}"/>
+        </apex:column> 
+        <apex:column headerValue="Status">   
+            <apex:outputfield value="{!c.cs.Status}"/>
+        </apex:column>
+        <apex:column headerValue="Subject">    
+            <apex:outputfield value="{!c.cs.Subject}"/>
+        </apex:column>
+        </apex:pageBlockTable>
+        <apex:outputLabel >
+        <div align="center">
+        <apex:commandButton value="First Page" action="{!FirstPage}" disabled="{!prev}"/>
+        <apex:commandButton value="Previous" action="{!previous}" disabled="{!prev}" />
+        <apex:commandButton value="Next" action="{!next}" disabled="{!nxt}"/>
+        <apex:commandButton value="Last Page" action="{!LastPage}" disabled="{!nxt}"/>
+        </div>
+        </apex:outputLabel>
+        
+        </apex:pageBlockSection>
+        
+        </apex:pageBlock>  
+        </apex:form>    
+</apex:page>

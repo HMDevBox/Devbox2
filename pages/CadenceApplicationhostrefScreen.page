@@ -1,0 +1,213 @@
+<apex:page showHeader="false" sidebar="false" showChat="false" controller="CadenceSSOController" language="{!cadencesiteuserlang}">
+<script>
+    function onloadaction()
+    {
+        document.getElementById('j_id0:j_id2:refkeytxt').disabled = true;
+        document.getElementById('j_id0:j_id2:hostidtxt').disabled = true;
+    }
+    function activatehost()
+    {
+        document.getElementById('j_id0:j_id2:refkeytxt').disabled = true;
+        document.getElementById('j_id0:j_id2:refkeytxt').value = "";
+        document.getElementById('j_id0:j_id2:hostidtxt').disabled = false;
+    }
+    function activateref()
+    {
+        document.getElementById('j_id0:j_id2:hostidtxt').disabled = true;
+        document.getElementById('j_id0:j_id2:hostidtxt').value = "";
+        document.getElementById('j_id0:j_id2:refkeytxt').disabled = false;
+    }
+</script>
+<style>
+    .cadencepageheaderstyle{
+        width : 100%;
+        height : 80px;
+        border-bottom : outset;
+        border-width : 1px;
+        background: linear-gradient(white, #E6E6E6);
+    }
+    .cadencelogostyle{
+        position : absolute;
+        left : 200px;
+    }
+    .langseletstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : blue;
+    }
+    .langselethoverstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : red;
+        opacity: 0.5;
+    }
+    .loginpagebodystyle{
+        position : absolute;
+        left : 200px;
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        margin-top : 20px;
+        border-radius : 10px;
+    }
+    .loginleftpanelstyle{
+        background: linear-gradient(white, #E6E6E6);
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .loginrightpanelstyle{
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .cadenpagefooterstyle{
+        width : 100%;
+        border-top : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        position : relative;
+        margin-top : 550px;
+    }
+    .cadenfootercontentstyle{
+        position : absolute;
+        left : 200px;
+        color : silver;
+    }
+    .appnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 100px;
+    }
+    .labelheaderstyle{
+        font-weight:bold;
+        margin:20px;
+        position:relative;
+        top:20px;
+        font-family:"Arial Black", Gadget, sans-serif;
+        font-size:12px;
+    }
+    .labelbodystyle{
+        width:850px;
+        margin:20px;
+        position:relative;
+        top:-0px;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        text-align: justify;
+    }
+    .tablefieldstyle{
+        margin:20px;
+    }
+    .labelfieldstyle{
+        text-align : right;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        font-weight:bold;
+    }
+    .cadencelogintxtboxstyle{
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        border-radius : 5px;
+        width : 200px;
+    }
+    .cadencebtnstyle{
+        width:60px;
+        height:20px;
+    }
+    .rightappnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 40px;
+        color : #CB4154;
+        width : 850px;
+    }
+    .txtboxstyle{
+        width : 400px;
+        margin-top : 20px;
+        margin-left : 50px;
+        margin-bottom : 20px;
+    }
+    .actionpanelstyle{
+        border-top : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        height : 30px;
+    }
+</style>
+<html>
+    <apex:form >
+    <title>Host Id/Ref Key</title>
+    <body onload="onloadaction();">
+        <div id="cadencepageheader" class="cadencepageheaderstyle">
+            <div class="cadencelogostyle">
+                <apex:image url="{!$Resource.Cadencelogo}" title="Cadence Design Systems"/>
+            </div>
+        </div>
+        <div id="regpagebody" class="loginpagebodystyle">
+            <div class="rightappnamestyle">
+                Cadence Online Support Information
+            </div>
+            <div class="labelbodystyle">
+                <apex:outputText escape="false" value="{!$Label.Cadence_HostId_Info}"></apex:outputText>
+            </div>
+            <div>
+                <table id="hostreftab" style="margin-left : 50px;">
+                    <tr id="row1">
+                        <td id="col11">
+                            <input class="labelfieldstyle" type="radio" name="hostref" onclick="activatehost();">
+                                Host Id
+                            </input>
+                        </td>
+                        <td id="col12">
+                            <apex:inputtext id="hostidtxt" styleclass="txtboxstyle" html-placeholder="Please Enter Host ID" value="{!dummyContact.Host_ID__c}"/>
+                        </td>
+                    </tr>
+                    <tr id="row2">
+                        <td id="col21">
+                            <input class="labelfieldstyle" type="radio" name="hostref" onclick="activateref();">
+                                Ref Key
+                            </input>
+                        </td>
+                        <td id="col22">
+                            <apex:inputtext id="refkeytxt" styleclass="txtboxstyle" html-placeholder="Please Enter Ref Key" value="{!dummyContact.Ref_Key__c}"/>
+                        </td>
+                    </tr>
+                </table>              
+            </div>
+            <div class="actionpanelstyle">
+                <button style="float:right; margin-right:50px;" type="button" onclick="openalert();">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+        <div id="cadenpagefooter" class="cadenpagefooterstyle">
+            <div class="cadenfootercontentstyle">
+            © Cadence Design Systems, Inc. All Rights Reserved.
+            </div>
+        </div>
+    </body>
+    </apex:form>
+</html>
+</apex:page>

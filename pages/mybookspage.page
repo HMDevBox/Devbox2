@@ -1,0 +1,6 @@
+<apex:page controller="bookretrieving">
+<P> Retrieving the books as table</p>
+<apex:pageBlock >
+
+</apex:pageBlock>
+</apex:page>

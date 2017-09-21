@@ -1,0 +1,15 @@
+<apex:page standardController="Case"  recordSetVar="Case">
+    
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script>
+     $(document).ready(function() {
+      $('a span:contains("Edit")').hide()
+    //  $('a span:contains("Edit")').hide();
+      $('a:contains("Del")').hide();
+     
+     }
+     </script>
+
+    <apex:enhancedList type="Case" height="300" rowsPerPage="10" id="CaseList" />
+    
+</apex:page>

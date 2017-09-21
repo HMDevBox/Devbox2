@@ -1,0 +1,19 @@
+<apex:page controller="RetriveBook" >
+    <apex:pageBlock title="Books Available">
+    <apex:form >
+        <apex:dataTable var="book" id="theTable" rowClasses="odd,even" value="{!books}" border="0">
+
+                <apex:column title="Book Name">
+
+                      
+            <apex:commandLink value="{!book.name}"/>
+                </apex:column>
+                <apex:column title="Author">
+
+                      
+            <apex:commandLink value="{!book.Author__c}"/>
+                </apex:column>
+       </apex:dataTable>
+        </apex:form>
+  </apex:pageBlock>
+</apex:page>

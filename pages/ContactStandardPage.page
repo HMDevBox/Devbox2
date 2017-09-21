@@ -1,0 +1,26 @@
+<apex:page standardController="Contract" extensions="appButton">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+<script type='text/javascript' src='/canvas/sdk/js/publisher.js'/>
+<script src="https://mobile1.t.salesforce.com/soap/ajax/30.0/connection.js" type="text/javascript" />
+<script>
+
+$(document).ready(function ()
+{
+var contractid= document.getElementById('accountId').value;
+
+alert('continue?');
+
+
+Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.appButton.updateAction}',contractid,function(result, event)
+{
+
+
+Sfdc.canvas.publisher.publish({name: "publisher.refresh", payload:{ refresh:"true"}});
+
+});
+});
+
+</script>  
+
+
+</apex:page>

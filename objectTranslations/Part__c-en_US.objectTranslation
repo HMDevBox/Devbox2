@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Part</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Parts</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+        <picklistValues>
+            <masterLabel>BANGALORE</masterLabel>
+            <translation><!-- BANGALORE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHENNAI</masterLabel>
+            <translation><!-- CHENNAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELHI</masterLabel>
+            <translation><!-- DELHI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HYDERABAD</masterLabel>
+            <translation><!-- HYDERABAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KOLKATA</masterLabel>
+            <translation><!-- KOLKATA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUMBAI</masterLabel>
+            <translation><!-- MUMBAI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Color --></label>
+        <name>Color__c</name>
+        <picklistValues>
+            <masterLabel>BLACK</masterLabel>
+            <translation><!-- BLACK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLUE</masterLabel>
+            <translation><!-- BLUE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREEN</masterLabel>
+            <translation><!-- GREEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RED</masterLabel>
+            <translation><!-- RED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WHITE</masterLabel>
+            <translation><!-- WHITE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Part name --></label>
+        <name>Part_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>Weight__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

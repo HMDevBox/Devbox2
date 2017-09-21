@@ -1,0 +1,27 @@
+<apex:page standardcontroller="case" extensions="TaskEdit">
+  <apex:form >
+  <!--    <apex:detail relatedList="true"></apex:detail>  -->
+      <apex:pageBlock title="Activity log" > 
+                    
+              <apex:pageBlockTable value="{!lstcs1}" var="tk"> 
+                  <apex:column headerValue="Reminder Type">  
+                  <apex:inputField value="{!tk.RemianderType__c}"/>
+                  </apex:column>
+                  <apex:column headerValue="Due Date" >
+                  <apex:inputField value="{!tk.Due_Date__c}" />
+                  </apex:column>
+                  <apex:column headerValue="Satus" >
+                  <apex:inputField value="{!tk.Status__c}" />
+                  </apex:column>
+              </apex:pageBlockTable>    
+          
+          <apex:pageBlockButtons location="top">
+              <apex:commandButton value="Add" action="{!Add}"/>
+              <apex:commandButton value="Extend"/>
+              <apex:commandButton value="Delete"/>
+          </apex:pageBlockButtons>
+      <apex:commandButton value="Save" action="{!Save}"/>    
+      </apex:pageBlock>
+      
+  </apex:form>
+</apex:page>

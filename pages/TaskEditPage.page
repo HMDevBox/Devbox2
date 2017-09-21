@@ -1,0 +1,40 @@
+<apex:page standardcontroller="case" extensions="TaskEdit">
+
+  <script type="text/javascript">
+        function selectAll(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+  </script>
+    
+  <apex:form >
+  <!--    <apex:detail relatedList="true"></apex:detail>  --> 
+      <apex:pageBlock title="Activity log" mode="edit">
+          
+          
+              <apex:pageBlockTable value="{!lstwrappertask}" var="tk"> 
+                <apex:column width="20">
+                <apex:facet name="header">
+                <apex:inputCheckbox onclick="selectAll(this,'inputid')" />
+                </apex:facet> 
+                <apex:inputCheckbox id="inputid" value="{!tk.CheckBox}"/>
+                  </apex:column>
+                  <apex:column headerValue="Reminder Type" value="{!tk.tsk.RemianderType__c}"/>
+                  <apex:column headerValue="Due Date" value="{!tk.tsk.Due_Date__c}"/>
+                  <apex:column headerValue="Satus" value="{!tk.tsk.Status__c}"/>
+              </apex:pageBlockTable>    
+          
+          <apex:pageBlockButtons location="top">
+              <apex:commandButton value="Add" action="{!Add}"/>
+              <apex:commandButton value="Extend" action="{!Extend}"/>
+              <apex:commandButton value="Delete" action="{!Deletepage}"/>
+          </apex:pageBlockButtons>
+          
+      </apex:pageBlock>
+      
+  </apex:form>
+</apex:page>

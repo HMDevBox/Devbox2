@@ -1,0 +1,7 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations {!$User.FirstName} {!$User.LastName}</h1> <br/>
+  
+  This is your new Page: CandidateMap
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

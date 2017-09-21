@@ -1,0 +1,11 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>This my Rectangle class</h1>
+  <apex:form >
+   Enter the Length &nbsp;&nbsp;<apex:inputText /><br/>
+   Enter the breadth &nbsp;&nbsp;<apex:inputtext /><br/>
+   <apex:commandButton value="area"/><apex:inputtext /> <br/>
+   <apex:commandButton value="perimeter"/><apex:inputtext />
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

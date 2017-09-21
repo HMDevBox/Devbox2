@@ -1,0 +1,73 @@
+<apex:page controller="testHide">
+
+<html>
+
+<head>
+<script>
+<apex:includeScript value="{!$Resource.jquerymin}"/>
+<apex:includeScript value="{!$Resource.jqueryuimin}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/jquery-2.1.4.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/jquery-ui.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/jquery.tree.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/app.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/jquery.dataTables.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/bootstrap-multiselect.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.CosSearchPageJS,'CosSearchPageJS/jquery.nicescroll.min.js')}"/>
+
+$(document).ready(function() {
+
+// $('#thetable').find('tr').click( function(){
+  alert('You clicked row '+ ($(this).index()+1) );
+//  $("tr").eq(1).show();
+ 
+ // var $rows = $("#table tr");
+  // $rows.eq(1).show(); 
+ // document.getElementById('suggestionsbox').style.visibility = 'visible';
+// }); 
+});
+
+
+/*
+function myFunction(x) {
+    
+    var x1= x.rowIndex+1; 
+    alert("Row index is: " + x.rowIndex);
+    alert(x1);
+    var $rows = $("#table tr");
+    $rows.eq(1).hide();   
+    
+    
+} */
+</script>
+
+
+
+</head>
+<body>
+<table id="thetable">
+<apex:repeat value="{!mapstr}" var="key">
+<tr>
+<td>
+{!key}
+</td>
+</tr>
+
+<tr style="visibility:hidden;">
+<td>
+<table>
+<apex:repeat value="{!mapstr[key]}" var="keyvalue">
+<tr >
+<td>
+{!keyvalue}
+</td>
+</tr>
+</apex:repeat>
+</table>
+</td>
+</tr>
+</apex:repeat>
+</table>
+</body>
+</html>
+</apex:page>

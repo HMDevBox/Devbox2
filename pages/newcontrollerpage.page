@@ -1,0 +1,36 @@
+<apex:page standardController="account" extensions="NewController" >
+
+<apex:form >
+<apex:pageBlock > 
+<apex:actionRegion >
+<apex:outputPanel >
+<apex:inputField value="{!account.check__c}" >
+<apex:actionSupport event="onchange" reRender="ajaxrequest1" />
+</apex:inputField>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2> <apex:outputLabel value="Check" /> </h2>
+</apex:outputPanel>
+</apex:actionRegion>
+
+<apex:outputPanel id="ajaxrequest1">
+<apex:pageBlockSection columns="1" rendered="{!account.check__c==true}" id="pageBlkSec2">
+<apex:pageBlockTable value="{!acc1}" var="a" > <apex:column ><apex:inputfield value="{!a.name}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.accountnumber}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.Site}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.NumberOfEmployees}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.Phone}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.Industry}" style="Width:100px" /> </apex:column>
+<apex:column ><apex:inputfield value="{!a.AccountSource}" style="Width:100px" /> </apex:column>
+
+
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+
+</apex:outputPanel> 
+
+<apex:commandButton value="save" action="{!save}" />
+
+</apex:pageBlock>
+
+</apex:form>
+  
+</apex:page>

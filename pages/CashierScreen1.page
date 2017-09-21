@@ -1,0 +1,23 @@
+<apex:page controller="Denomination" >
+<apex:form >
+<apex:pageblock title="Cashier Screen">
+<apex:pageblocksection >
+
+Total Cash <apex:inputtext />
+Total amount on Checks <apex:inputtext />
+Total Amount on DD's <apex:inputtext />
+</apex:pageblocksection>
+<apex:pageblocksection title="Denominations">
+RS 1000 <apex:inputtext value="{!thousands}"/>
+RS 500 <apex:inputtext value="{!fivehundreads}"/>
+RS 100 <apex:inputtext value="{!hundreads}"/>
+RS 50 <apex:inputtext value="{!fifties}"/>
+RS 10 <apex:inputtext value="{!tens}"/>
+<apex:commandbutton value="amount" action="{!amount}" />
+<apex:outputText value="{!amt}"/>
+
+</apex:pageblocksection>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

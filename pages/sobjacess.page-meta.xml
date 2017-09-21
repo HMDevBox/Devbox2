@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>27.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>It tells the object is accessible or not.</description>
+    <label>sobjacess</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>816</minorNumber>
+        <namespace>SDOC</namespace>
+    </packageVersions>
+</ApexPage>

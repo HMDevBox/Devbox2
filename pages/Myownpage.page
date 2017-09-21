@@ -1,0 +1,13 @@
+<apex:page controller="tra" >  
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  <br>enter the base &nbsp; <apex:inputtext value="{!base}"/> </br>    
+  <br>enter the height &nbsp; <apex:inputtext value="{!height}"/> </br>
+  <br><apex:commandButton value="ar" action="{!ar}"/> &nbsp;
+  <apex:outputtext value="{!area}" /></br>
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

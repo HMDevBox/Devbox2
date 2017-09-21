@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cadence Online Service Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cadence Online Service Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Error Reason --></label>
+        <name>Error_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Login IP address --></label>
+        <name>Login_IP_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation Status --></label>
+        <name>Operation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Operation Time --></label>
+        <name>Operation_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Detail --></label>
+        <name>Process_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related User --></label>
+        <name>Related_User__c</name>
+        <relationshipLabel><!-- Cadence Online Service Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- WebService Callout Request Body --></label>
+        <name>WebService_Callout_Request_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- WebService Callout Request Header --></label>
+        <name>WebService_Callout_Request_Header__c</name>
+    </fields>
+    <fields>
+        <label><!-- WebService Callout Request --></label>
+        <name>WebService_Callout_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Webservice Callout Method --></label>
+        <name>Webservice_Callout_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Webservice Callout Request Header1 Name --></label>
+        <name>Webservice_Callout_Request_Header1_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Webservice Callout Request Header1 Value --></label>
+        <name>Webservice_Callout_Request_Header1_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Webservice Callout Request Header2 Name --></label>
+        <name>Webservice_Callout_Request_Header2_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Webservice Callout Request Header2 Value --></label>
+        <name>Webservice_Callout_Request_Header2_Value__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Batch --></label>
+        <name>Batch</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Login --></label>
+        <name>Login</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Registration --></label>
+        <name>Registration</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Scheduler --></label>
+        <name>Scheduler</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

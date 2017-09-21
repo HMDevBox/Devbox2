@@ -1,0 +1,14 @@
+<apex:page >
+<apex:form >
+  <apex:selectRadio > 
+  
+   <p><apex:selectOption itemValue="Member" itemlabel="Member"/></p>
+    
+    <p><apex:selectOption itemValue="Blog" itemlabel="Blog"/></p>
+    
+    <p><apex:selectOption itemValue="Photo" itemlabel="Photo"/></p>
+    
+</apex:selectRadio>
+
+ </apex:form> 
+</apex:page>

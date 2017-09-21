@@ -1,0 +1,5 @@
+<apex:page controller="devToDev">
+  
+  <apex:iframe src="{!urlstr}"/>
+  
+</apex:page>

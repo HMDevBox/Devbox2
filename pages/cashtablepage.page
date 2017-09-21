@@ -1,0 +1,26 @@
+<apex:page controller="cashtable1">
+<apex:form >
+<apex:pageblock >
+<apex:pageblocktable value="{!listge}" var="g" >
+<apex:column headerValue="location">
+<apex:outputtext value="{!g.location}"/>
+</apex:column>
+<apex:column headerValue="name">
+<apex:outputtext value="{!g.name}"/>
+</apex:column>
+<apex:column headerValue="code">
+<apex:outputtext value="{!g.code}"/>
+</apex:column>
+<apex:column headerValue="Date1">
+<apex:outputtext value="{!g.Date1}"/>
+</apex:column>
+<apex:column headerValue="description">
+<apex:outputtext value="{!g.description}"/>
+</apex:column>
+<apex:column headerValue="curency">
+<apex:outputtext value="{!g.curency}"/>
+</apex:column>
+</apex:pageblocktable>
+</apex:pageblock>
+</apex:form>
+</apex:page>

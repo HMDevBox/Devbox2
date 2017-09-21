@@ -1,0 +1,17 @@
+<apex:page standardcontroller="Book__c" recordSetVar="books">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:pageBlock >
+  <apex:dataTable value="{!books}" var="b" border="1" cellpadding="5">
+  <apex:column headerValue="Book name" value="{!b.Title__c}">
+  </apex:column>
+  <apex:column headervalue="Author" value="{!b.Author__c}">
+  </apex:column>
+   <apex:column headervalue="Price" value="{!b.Price__c}">
+  </apex:column>
+  
+  </apex:dataTable>
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

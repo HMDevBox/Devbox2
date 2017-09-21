@@ -1,0 +1,149 @@
+<apex:page showHeader="false" sidebar="false" showChat="false" controller="CadenceSSOController" language="{!cadencesiteuserlang}">
+<script>
+    
+</script>
+<style>
+    .cadencepageheaderstyle{
+        width : 100%;
+        height : 80px;
+        border-bottom : outset;
+        border-width : 1px;
+        background: linear-gradient(white, #E6E6E6);
+    }
+    .cadencelogostyle{
+        position : absolute;
+        left : 200px;
+    }
+    .langseletstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : blue;
+    }
+    .langselethoverstyle{
+        position : absolute;
+        top:10px;
+        left : 1000px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size:11px;
+        color : red;
+        opacity: 0.5;
+    }
+    .loginpagebodystyle{
+        position : absolute;
+        left : 200px;
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        margin-top : 20px;
+        border-radius : 10px;
+    }
+    .loginleftpanelstyle{
+        background: linear-gradient(white, #E6E6E6);
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .loginrightpanelstyle{
+        height : 500px;
+        border-style : solid;
+        border-width : 0px;
+        width : 450px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .cadenpagefooterstyle{
+        width : 100%;
+        border-top : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        position : relative;
+        margin-top : 550px;
+    }
+    .cadenfootercontentstyle{
+        position : absolute;
+        left : 200px;
+        color : silver;
+    }
+    .appnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 100px;
+    }
+    .rightappnamestyle{
+        font-size : 20px;
+        font-weight : bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        margin : 20px;
+        position : relative;
+        top : 10px;
+        height : 100px;
+        color : #CB4154;
+    }
+    .labelheaderstyle{
+        font-weight:bold;
+        margin:20px;
+        position:relative;
+        top:20px;
+        font-family:"Arial Black", Gadget, sans-serif;
+        font-size:12px;
+    }
+    .labelbodystyle{
+        width:400px;
+        margin:20px;
+        position:relative;
+        top:-0px;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        text-align: justify;
+    }
+    .tablefieldstyle{
+        margin:20px;
+    }
+    .labelfieldstyle{
+        text-align : right;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size:11px;
+        font-weight:bold;
+    }
+    .cadencelogintxtboxstyle{
+        border-style : solid;
+        border-width : 1px;
+        border-color : #E6E6E6;
+        border-radius : 5px;
+        width : 200px;
+    }
+    .cadencebtnstyle{
+        width:60px;
+        height:20px;
+    }
+</style>
+<html>
+    <apex:form >
+    <title>Registration</title>
+    <body>
+        <div id="cadencepageheader" class="cadencepageheaderstyle">
+            <div class="cadencelogostyle">
+                <apex:image url="{!$Resource.Cadencelogo}" title="Cadence Design Systems"/>
+            </div>
+        </div>
+        <div id="regpagebody" class="loginpagebodystyle">
+        </div>
+        <div id="cadenpagefooter" class="cadenpagefooterstyle">
+            <div class="cadenfootercontentstyle">
+            © Cadence Design Systems, Inc. All Rights Reserved.
+            </div>
+        </div>
+    </body>
+    </apex:form>
+</html>
+</apex:page>

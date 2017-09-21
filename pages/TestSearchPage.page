@@ -1,0 +1,545 @@
+<apex:page showHeader="false" sidebar="false">
+
+<link rel="stylesheet" href="{!URLFOR($Resource.bootStrapmincss)}"/>
+<link rel="stylesheet" href="{!URLFOR($Resource.awesomemincss)}"/>
+<link rel="stylesheet" href="{!URLFOR($Resource.jquerytreecss)}"/>
+<link rel="stylesheet" href="{!URLFOR($Resource.stylecss)}"/>
+
+
+<apex:includeScript value="{!$Resource.JQ214minjs}"/>
+<apex:includeScript value="{!$Resource.jquijs}"/>
+<apex:includeScript value="{!$Resource.bootstrapminjs}"/>
+<apex:includeScript value="{!$Resource.jquerytreejs}"/>
+<apex:includeScript value="{!$Resource.jqnicescrolljs}"/>
+<apex:includeScript value="{!$Resource.appjs}"/>
+
+
+<link rel="stylesheet"
+    href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"/>
+
+<script type="text/javascript"
+    src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+<script
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<apex:includeScript value="{!$Resource.btmultiselectjs}"/>    
+<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="{!URLFOR($Resource.btmultiselectcss)}"/> 
+<script>
+    $(document)
+            .ready(
+                    function() {
+                        
+                        $('.footer-panel').slideToggle(400);
+                        
+                        ResizeNiceScroll();
+                        //checkTabORDesktopView();
+
+                        $('#release-options')
+                                .multiselect(
+                                        {
+
+                                            buttonText : function(options,
+                                                    select) {
+
+                                                //$(".btn-group .multiselect-container li a label").css("label:before { content:'\2714'; /* Tick */ color:#7b7c7c; background-color: #fff; text-align:center; line-height:15px; text-shadow:0px 0px 3px #eee;}");
+                                                return 'All Releases';
+                                            },
+                                            buttonTitle : function(options,
+                                                    select) {
+                                                var labels = [];
+                                                options
+                                                        .each(function() {
+                                                            //alert($(this).text());
+                                                            labels.push($(this)
+                                                                    .text());
+                                                        });
+                                                return labels.join(' - ');
+                                            },
+                                            templates : {
+                                                button : '<input type="checkbox" name="all-release-checkbox" value="allRelease" id="allRelease"><label for="allRelease"></label><span class="multiselect dropdown-toggle" data-toggle="dropdown">All Releases<span class="user-chevron"> <i class="fa fa-chevron-down"></i></span></span>',
+                                                ul : '<ul id="releasedropdown-ul" class="multiselect-container dropdown-menu"></ul>'
+                                            }
+                                        });
+
+                        $('#allRelease').on(
+                                'click',
+                                function() {
+                                    //alert($("#within2").is(":checked"));
+                                    $(".release-dropdown .btn-group")
+                                            .toggleClass("open");
+                                    if ($("#allRelease").is(":checked")) {
+
+                                        showReleasedropdown();
+                                        $('#release-options').multiselect(
+                                                'selectAll', false);
+                                    } else {
+                                        showReleasedropdown();
+                                        $('#release-options').multiselect(
+                                                'deselectAll', false);
+                                    }
+
+                                });
+
+                        //alert($('.body').height());
+                        $(".icon-user").click(function() {
+                            $(".user-actions").toggle(500);
+                            //alert('hi');
+                        });
+
+                        $(".right-slider-icon")
+                                .click(
+                                        function() {
+                                            if ($(".right-slider").hasClass(
+                                                    "showit") == false) {
+                                                $(".right-slider").addClass(
+                                                        "showit")
+                                                //alert('hi1'+$(".right-slider").css("right"));
+                                            } else {
+                                                $(".right-slider").removeClass(
+                                                        "showit")
+                                                //alert('hi1'+$(".right-slider").css("right"));
+                                            }
+                                        });
+
+                        $('.top_search .categories a').click(
+                                function() {
+
+                                    $('.top_search .categories a').removeClass(
+                                            "active");
+                                    $(this).addClass("active");
+                                });
+
+                        $('.footer-arrow a img').click(function() {
+                            $('.footer-panel').slideToggle(400);
+                            //alert('hi2');
+                            //add this line
+                            $('html,body').animate({
+                                scrollTop : $(".footer").offset().top
+                            }, 'slow');
+                            return false;
+                        });
+
+                        $('.multiselect').on('click', function() {
+
+                            showReleasedropdown();
+
+                        });
+
+                    });
+
+    function toggler(divId) {
+        $("#" + divId).toggle();
+    }
+
+    function ResizeNiceScroll() {
+
+
+        $('#scrolldivbar').niceScroll({
+            cursorcolor : "#156a8f",
+            cursorwidth : 4,
+            cursorborderradius : '0px',
+            cursorborder : 'none',
+            background : "none",
+            autohidemode : false
+
+        });
+
+        $('#productsdivscroll').niceScroll({
+            cursorcolor : "#156a8f",
+            cursorfixedheight : 30,
+            cursorwidth : 4,
+            cursorborderradius : '0px',
+            cursorborder : 'none',
+            background : "#a2abaf",
+            autohidemode : false
+
+        });
+        //$('#scrolldivbar').getNiceScroll().show();
+        //$('#scrolldivbar').getNiceScroll().resize();
+        //$('#scrolldivbar').getNiceScroll().resize().show();
+
+        
+    }
+    function HideNiceScroll() {
+        $('.left-panel-icon').css({
+            left : 0
+        });
+        $("#scrolldivbar").getNiceScroll().resize().hide();
+        $('#releasedropdown-ul').getNiceScroll().resize().hide();
+
+    }
+
+    function checkSCR() {
+        //alert("bbbbb");
+        $('#releasedropdown-ul').getNiceScroll().resize().hide();
+    }
+
+    
+
+    $(function() {
+        
+        $(window).resize(function() {
+            ResizeNiceScroll();
+
+            setTabHeaderHeight();
+
+            
+            
+            var Window_width = $(window).width();
+            if(Window_width<1183){
+                //alert();
+                if($('.left-panel').hasClass('nav-toggle')){
+                    HideNiceScroll();
+                    
+                }
+                //ResizeNiceScroll();
+            }
+            
+            /* var width = $('.left-panel').width();
+
+            if ($(".left-panel-icon").hasClass("nav-toggle-btn") == false) {
+                //alert(width);
+                if (width < 250)
+                    $('.left-panel-icon').css({
+                        left : width
+                    });
+                else if (width > 250) {
+
+                    $('.left-panel-icon').css({
+                        left : 0
+                    });
+                }
+
+            } */
+        });
+
+        $("#AllProducts").click(function() {
+            var result = this.checked;
+            $(".products  >input[type='checkbox']").each(function() {
+                this.checked = result;
+            })
+
+        });
+
+        $("#Alldocumenttypes").click(function() {
+            var result = this.checked;
+            $(".doctypes  >input[type='checkbox']").each(function() {
+                this.checked = result;
+            })
+
+        });
+
+        $(".navbar-header button").click(function() {
+
+            setTabHeaderHeight();
+
+        });
+
+        $('.main-nav .dropdown .dropdown-menu .sub-menu').hover(
+                function() {
+
+                    // alert("hhh");
+                    var width = $(window).width();
+                    //alert(width);
+                    if (width < 1183){
+                        $('.main-nav .navbar .navbar-collapse').css({
+                            /* 'border-left':'4px solid #e0e0e0',   
+                            'border-top':'4px solid #e0e0e0',
+                            'border-bottom':'4px solid #e0e0e0',     */
+                            'background-color': '#fff'
+                                });
+                        $('.main-nav .navbar .navbar-collapse').addClass('border');
+                    }
+                    if (width > 1183){
+                        // $('.main-nav .navbar .navbar-collapse').removeAttr("style");
+                        $('.main-nav .navbar .navbar-collapse').css({
+                                'background-color': ''/* ,
+                                'border-left':'0px solid #e0e0e0',
+                                'border-top':'0px solid #e0e0e0',
+                                'border-bottom':'0px solid #e0e0e0' */});
+                        $('.main-nav .navbar .navbar-collapse').removeClass('border');  
+                    }
+                },
+                function() {
+
+                    // alert("hhh");
+                    var width = $(window).width();
+                    if (width < 1183){
+                        // $('.main-nav .navbar .navbar-collapse').removeAttr("style");
+                        $('.main-nav .navbar .navbar-collapse').css({
+                                'background-color':''/* ,
+                                'border-left':'0px solid #e0e0e0',  
+                                'border-top':'0px solid #e0e0e0',
+                                'border-bottom':'0px solid #e0e0e0' */});
+                        $('.main-nav .navbar .navbar-collapse').removeClass('border');      
+                    }
+                });
+
+        $('.icon-featured').click(
+
+                 function() {                           
+                            $('.search-results .featuredShow').slideToggle("show"); 
+                });
+        
+        $('.icon-info').on('click',function(){
+              $(this).parent().siblings('.result-featured').slideToggle("show");
+            });
+        
+        
+    });
+
+    function setTabHeaderHeight() {
+        var width = $(window).width();
+        var height = $('.main-container .body .container').height();
+
+        if (width < 1183)
+            $('.main-nav .navbar .navbar-collapse .navbar-nav').css(
+                    'min-height', height);
+        else if (width >= 1183)
+            $('.main-nav .navbar .navbar-collapse .navbar-nav').css(
+                    'min-height', '');
+
+    }
+    
+    
+    function showReleasedropdown() {
+
+        var val = $(this).attr("aria-expanded");
+        //alert(val);
+
+        if (val === undefined) {
+            $('#releasedropdown-ul').niceScroll({
+                cursorcolor : "#156a8f",
+                cursorfixedheight : 30,
+                //cursorborder:"2px solid white !transparent",
+                //cursorborder :"5px solid white",
+                //railpadding : {top:10},
+                cursorwidth : 4,
+                cursorborderradius : '0px',
+                cursorborder : 'none',
+                background : "#a2abaf",
+                autohidemode : false
+
+            });
+
+            $('#releasedropdown-ul').getNiceScroll().resize();
+            $('#releasedropdown-ul').getNiceScroll().resize().show();
+
+
+            setTimeout(function() {
+                
+                $('#releasedropdown-ul').getNiceScroll().autohidemode = false;
+                $('#releasedropdown-ul').getNiceScroll().resize();
+                $('#releasedropdown-ul').getNiceScroll().resize().show();
+                //$('#releasedropdown-ul').getNiceScroll().show();
+            }, 10);
+        } else if (val == 'true') {
+            // alert("jjj");
+            $('#releasedropdown-ul').getNiceScroll().resize().hide();
+        } else if (val == 'false') {
+
+            setTimeout(function() {
+
+                $('#releasedropdown-ul').getNiceScroll().autohidemode = false;
+                $('#releasedropdown-ul').getNiceScroll().resize();
+                $('#releasedropdown-ul').getNiceScroll().resize().show();
+            }, 100);
+        }
+
+    }
+    
+</script>   
+<style> 
+.main-container {
+    height: 100%;
+}
+.main-nav .dropdown .dropdown-menu {
+    box-shadow: 0 0px 6px rgba(0,0,0,.175);
+    background-color: #e7e7e7;
+    border: 3px solid #fff;
+    border-radius: 6px;
+    margin-top: 0;
+    padding-top: 0;
+}
+div {
+    display: block;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.header .logo img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.nopadding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.main-nav .navbar-default {
+    background: transparent;
+    border: none;
+    font-family: FrutigerLTW01-55roman;
+    margin-bottom: 0px;
+    padding-top: 16px;
+}
+</style>
+<html>
+    <apex:form >
+    <head>
+    </head>
+    <body>
+    <div class="main-container">
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-md-3 col-sm-3 col-lg-3 logo">
+                        <apex:image url="{!$Resource.logo}" title="Cadence Design Systems"/>
+
+                    </div>
+                    <div class="col-xs-8 col-md-9 col-sm-9 col-lg-9  main-nav nopadding pull-right">
+                        <nav
+                            class="navbar navbar-default col-lg-10 col-md-10 col-sm-9 col-xs-9 nopadding">
+                            <div class="navbar-header">
+                                <button type="button" data-target="#navbarCollapse"
+                                    data-toggle="collapse" class="navbar-toggle">
+                                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                        class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div id="navbarCollapse"
+                                class="collapse navbar-collapse nopadding clearfix">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">Cases <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Case 01</a></li>
+                                                <li><a href="#">Case 02</a></li>
+                                                <li><a href="#">Case 03</a></li>
+                                                <li><a href="#">Case 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="active">
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                Tools <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown sub-menu"><a href="#"
+                                                    class="dropdown-toggle" data-toggle="dropdown">Tools 01</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Tools Sub 01</a></li>
+                                                        <li><a href="#">Tools Sub 02</a></li>
+                                                        <li><a href="#">Tools Sub 03</a></li>
+                                                    </ul></li>
+                                                <li><a href="#">Tools 02</a></li>
+                                                <li><a href="#">Tools 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="active">
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                IP <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">IP 01</a></li>
+                                                <li><a href="#">IP 02</a></li>
+                                                <li><a href="#">IP 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                Resources <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Resources 01</a></li>
+                                                <li><a href="#">Resources 02</a></li>
+                                                <li><a href="#">Resources 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                Self Learning <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Self Learning 01</a></li>
+                                                <li><a href="#">Self Learning 02</a></li>
+                                                <li><a href="#">Self Learning 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                Software <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Software 01</a></li>
+                                                <li><a href="#">Software 02</a></li>
+                                                <li><a href="#">Software 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown pull-left no-padding">
+                                            <button class="btn dropdown-toggle" type="button"
+                                                data-toggle="dropdown">
+                                                My Support <span class="user-chevron"> <i
+                                                    class="fa fa-chevron-down"></i> <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Support 01</a></li>
+                                                <li><a href="#">Support 02</a></li>
+                                                <li><a href="#">Support 03</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    <apex:iframe id="theFrame" />
+    </div>
+    <script>document.getElementById('theFrame').src = "https://coststgsa1.cadence.com/search?q=&client=tensilica_errata_frontend&output=xml_no_dtd&proxystylesheet=tensilica_errata_frontend&site=tensilica_errata&filter=0&proxyreload=1";</script>
+</body>
+</apex:form>
+</html>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page controller="jkc">
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  <br>Input Text &nbsp; &nbsp;
+  <apex:inputText value="{!giventext}"/> &nbsp;&nbsp;&nbsp; </br>
+  <p><apex:commandButton value="submit" action="{!rettext}"/></p>
+  <p><apex:outputText value="{!sendtext}"> </apex:outputText></p>
+  </apex:form>
+</apex:page>

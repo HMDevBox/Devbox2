@@ -1,0 +1,37 @@
+<apex:page StandardController="Lead" recordSetVar="leads">
+<apex:form id="IdMyForm">
+      <font color="red"><apex:messages /></font>
+  <apex:pageBlock mode="Edit" id="IdMyPageBlock">
+  
+  <apex:pageBlockSection title="Lead Information" id="IdMyPageBlockSection">
+  
+  <apex:pageBlockTable value="{!leads}" var="l" columns="2">
+  Lead Status <apex:inputField value="{!L.Status}"/>
+  Lead source<apex:inputField value="{!L.LeadSource}"/>  
+  salutation <apex:inputField value="{!L.Salutation}"/>
+  First name <apex:inputField value="{!L.FirstName}"/>
+  Last Name<apex:inputField value="{!L.LastName}"/>
+  Phone <apex:inputField value="{!L.Phone}"/>
+  Email <apex:inputField value="{!L.Email}"/>
+  Mobile phone<apex:inputField value="{!L.MobilePhone}"/>
+  </apex:pageBlockTable>
+  </apex:pageBlockSection>
+  
+       
+     
+       <apex:pageBlockSection columns="3" title="Address Information">
+  <apex:inputField value="{!Lead.Street}"/>
+  <apex:inputField value="{!Lead.City}"/>
+  <apex:inputField value="{!Lead.State}"/>
+  <apex:inputField value="{!Lead.Country}"/>
+  <apex:inputField value="{!Lead.postalcode}" required="true"/>
+  </apex:pageBlockSection>  
+      <apex:pageBlockButtons >
+      <apex:commandButton action="{!Save}" value="Save"/>
+      <apex:commandButton action="{!cancel}" value="Cancel"/>
+      </apex:pageBlockButtons>
+  </apex:pageBlock>
+   
+  
+  </apex:form>
+</apex:page>

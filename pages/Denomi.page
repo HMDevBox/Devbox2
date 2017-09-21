@@ -1,0 +1,8 @@
+<apex:page standardcontroller="Account" recordSetVar="accounts">
+<apex:pageBlock >
+<apex:dataTable value="{!accounts}" var="b" border="4" columnsWidth="150" >
+<apex:column value="{!b.RS_1000__c}"/>
+<apex:column value="{!b.RS_100__c}"/>
+</apex:datatable>
+</apex:pageblock>
+</apex:page>

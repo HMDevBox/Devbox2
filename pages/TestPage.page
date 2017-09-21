@@ -1,0 +1,18 @@
+<apex:page sidebar="false" >
+ <h1>Congratulations {! $User.FirstName  & ' '& $User.LastName} </h1> 
+ <p>This is your new Page</p>
+ <p>the year of Today date is {!year(Today())}</p>
+ <p> the date after one week {! 7+today()}</p>
+ <p> is it true {!if( 15>5,'yes','no')}</p>
+<apex:form >
+<apex:pageBlock title="Accounts">
+    <apex:pageBlockSection Title="Account name">Here we write Account holders name </apex:pageBlockSection>
+    <apex:pageBlockSection Title="another section in Account">Sorry i dont no the Accounts</apex:pageBlockSection>
+     
+    <apex:commandButton Value="name" action="{!name}" />
+     
+</apex:pageBlock>
+  
+  
+</apex:form>
+</apex:page>

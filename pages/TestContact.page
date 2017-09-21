@@ -1,0 +1,7 @@
+<apex:page showHeader="true" standardController="Contact">
+
+<apex:detail >
+<a href="damacsipphone://sip:500@ekiga.net:{!contact.MobilePhone}" target="_blank">{!contact.Name}</a>
+</apex:detail>
+
+</apex:page>

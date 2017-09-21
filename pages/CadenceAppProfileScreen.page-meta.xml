@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Cadence Application User Profile screen</description>
+    <label>CadenceAppProfileScreen</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>816</minorNumber>
+        <namespace>SDOC</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>16</majorNumber>
+        <minorNumber>3</minorNumber>
+        <namespace>echosign_dev1</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>8</minorNumber>
+        <namespace>sf_chttr_apps</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>6</minorNumber>
+        <namespace>sf_com_apps</namespace>
+    </packageVersions>
+</ApexPage>

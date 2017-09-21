@@ -1,0 +1,19 @@
+<apex:page controller="accountSearch" id="pg">
+  <apex:form id="myform">
+      <apex:pageBlock id="pb">
+          <apex:pageBlockSection id="pbs">
+              <apex:inputText id="sea" label="Search" onclick="SearchValue()"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+  
+    <script>
+        function SearchValue(){
+            alert('ok');
+            var SearchTerm=document.getElementById('pg:myform:pb:pbs:sea').value;
+            alert(SearchTerm);
+            accountSearch.accountSea(SearchTerm,renderResults);
+        }
+        </script>
+  
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page standardController="account" extensions="UsingInEmailTemplate" showHeader="false" sidebar="false">
+<apex:form >
+<apex:commandButton value="send" action="{!sendMethod}"/>
+
+  <apex:dataTable value="{!lstaccount}" var="acc">
+
+        <apex:column >
+
+            <apex:facet name="header">Account Name</apex:facet>
+
+            {!acc.Name}
+
+        </apex:column>
+        
+        <apex:column >
+
+            <apex:facet name="header"> SLA</apex:facet>
+
+            {!acc.SLA__c}
+
+        </apex:column>
+
+    </apex:dataTable>
+ </apex:form>   
+</apex:page>

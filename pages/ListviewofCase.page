@@ -1,0 +1,43 @@
+<apex:page controller="SimilarCasesController" tabStyle="Case" title="smilar cases">
+
+    <script type="text/javascript">
+        function selectAll(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+    
+    <apex:form >
+    
+   <!-- <apex:sectionHeader title="Similar Cases" subtitle="{!currentCase.CaseNumber}"/> -->
+    
+  <!--  <apex:pageBlock title="Similar Cases to {!currentCase.CaseNumber}"> -->
+    <apex:pageBlock title="Cases">
+        <apex:pageBlockTable value="{!Listwrapper}" var="w">        
+            <apex:column width="20">
+                <apex:facet name="header">
+                <apex:inputCheckbox onclick="selectAll(this,'inputid')" />
+                </apex:facet> 
+                <apex:inputCheckbox id="inputid" value="{!w.checked}"/>
+            </apex:column>   
+            <apex:column headerValue="Actions" width="50">
+            <apex:outputLink value="{!URLFOR($Action.Case.Edit, w.Case1.Id)}">Edit</apex:outputLink>
+            </apex:column> 
+            <apex:column headerValue="Case Number" value="{!w.case1.CaseNumber}"/>
+            <apex:column headerValue="Owner" value="{!w.case1.Owner.Name}"/>
+            <apex:column headerValue="Subject" value="{!w.case1.Subject}"/>
+            <apex:column headerValue="Status" value="{!w.case1.Status}"/>            
+        </apex:pageBlockTable>
+        
+        <apex:pageBlockButtons location="TOP">
+            <apex:commandButton value="Accept" action="{!selectedvalues}"/>
+        </apex:pageBlockButtons>
+        
+    </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

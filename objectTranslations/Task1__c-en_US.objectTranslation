@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Task1</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tasks1</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Tasks1 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remiander Type --></label>
+        <name>RemianderType__c</name>
+        <picklistValues>
+            <masterLabel>Followups with member</masterLabel>
+            <translation><!-- Followups with member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting BU Response</masterLabel>
+            <translation><!-- Waiting BU Response --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>complete</masterLabel>
+            <translation><!-- complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>extend</masterLabel>
+            <translation><!-- extend --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

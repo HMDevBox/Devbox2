@@ -1,0 +1,14 @@
+<apex:page standardcontroller="Account" recordSetVar="accounts">
+  <apex:pageBlock >
+  <apex:repeat value="{!accounts}" var="b" >
+          <apex:pageBlockSection columns="1" >   
+            <apex:pageBlockSectionItem >
+                   
+                <apex:outputLabel value="{!b.RS_1000__c}" />
+                 
+                <apex:outputLabel value="{!b.RS_100__c}" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+ </apex:repeat>   
+ </apex:pageBlock>       
+</apex:page>

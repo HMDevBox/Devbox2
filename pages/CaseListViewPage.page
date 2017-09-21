@@ -1,0 +1,10 @@
+<apex:page showHeader="true" tabstyle="Case">
+    <apex:outputText title="Queue: Index queue"/>
+    <apex:outputText title="No Of cases: 10"/>
+     
+    <apex:enhancedList type="Case" height="300" id="CaseList" customizable="false">
+    
+    </apex:enhancedList>
+    
+    
+</apex:page>

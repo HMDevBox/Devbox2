@@ -1,0 +1,30 @@
+<apex:page >
+<apex:form >
+
+<apex:actionRegion >
+<apex:pageBlock >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<apex:outputLabel value="Cash"/>
+<apex:pageblockbuttons title="cash" >
+<apex:actionSupport event="onclick" reRender="ajaxrequest1" />
+</apex:pageblockbuttons>
+</apex:pageBlock>
+</apex:actionRegion>
+
+
+
+
+<apex:pageblock id="ajaxrequest1" >
+<apex:outputPanel >
+<apex:pageBlockSection columns="1" rendered="true" >
+<apex:outputlabel value="cash amount" />
+<apex:inputtext Style="width:100px;" />
+</apex:pageBlockSection>
+</apex:outputPanel> 
+</apex:pageBlock>
+
+
+
+</apex:form>
+
+</apex:page>

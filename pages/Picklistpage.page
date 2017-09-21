@@ -1,0 +1,21 @@
+<apex:page controller="sampleCls" showHeader="false" >
+        <apex:form >
+
+            <apex:selectList value="{!countries}"  multiselect="false" size="1" >
+                <apex:selectOptions value="{!items}"/>
+            </apex:selectList>
+            <p/>
+
+            <apex:commandButton value="Test" action="{!test}" rerender="out" status="status"/>
+        </apex:form>
+     <apex:outputPanel id="out">
+            <apex:actionstatus id="status" startText="testing...">
+                <apex:facet name="stop">
+                    <apex:outputPanel >
+                        <p>You have selected:</p>
+                    {!country}
+                    </apex:outputPanel>
+                </apex:facet>
+            </apex:actionstatus>
+        </apex:outputPanel>
+    </apex:page>

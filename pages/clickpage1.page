@@ -1,0 +1,28 @@
+<apex:page standardController="account" extensions="clickcontroller1" >
+<apex:form >
+<apex:pageBlock > 
+<apex:outputLabel value="Account Number">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputField value="{!acc1.accountnumber}" onblur="js1()"/></apex:outputLabel>
+
+<script>
+function js1(){
+alert('value');
+Proposal_value();
+alert('value');
+
+}
+</script> 
+
+
+<apex:actionFunction name="Proposal_value" action="{!prodetails}" rerender="idproposal" />
+
+<apex:pageBlockTable value="{!listacc}" var="a" id="idproposal1"> 
+<apex:column headerValue="account name" >  <apex:outputField value="{!a.name}"/> </apex:column>
+
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+<apex:commandButton value="save" action="{!save}" />
+
+</apex:form>
+</apex:page>

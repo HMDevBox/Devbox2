@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>How can we help you</value>
+        </caseValues>
+        <name>description_lead</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <quickActions>
+        <label><!-- Dialer --></label>
+        <name>Dialer</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send a Sms --></label>
+        <name>Send_a_Sms</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please Enter valid mobile number or landline number --></errorMessage>
+        <name>Mobile_no_required</name>
+    </validationRules>
+</CustomObjectTranslation>

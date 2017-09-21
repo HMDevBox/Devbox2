@@ -1,0 +1,9 @@
+<apex:page standardController="supplier__c" recordSetVar="suppliers" sidebar="true">
+  <apex:pageBlock >
+    <apex:pageBlockTable value="{!suppliers}" var="a" border="4" columnsWidth="150">
+      <apex:column value="{!a.name}"/>
+      <apex:column value="{!a.supplier_name__c}"/>
+      <apex:column value="{!a.City__c}"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="EmailSearchController">
+    <apex:includeScript value="/support/console/22.0/integration.js"/>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputLabel value="Email : " for="Email" />
+            <apex:inputText value="{!Email}" id="Email" >
+                <apex:actionSupport action="{!doSearch}" event="onkeyup" rerender="resultBlock"/>
+            </apex:inputText>
+            <apex:commandButton value="Search" action="{!doSearch}" rerender="resultBlock"/>                  
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:pageBlock id="resultBlock">
+        <apex:pageBlockTable value="{!contactList}" var="cur">
+            <apex:column headerValue="Contact Name">
+<a href="javascript:sforce.console.openPrimaryTab(null,'/{!cur.Id}',true,'{!cur.FirstName} {!cur.LastName}');">{!cur.FirstName} {!cur.LastName}</a>
+            </apex:column>
+            <apex:column value="{!cur.Email}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

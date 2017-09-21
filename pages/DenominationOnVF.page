@@ -1,0 +1,23 @@
+<apex:page Standardcontroller="contact" Extensions="DenominationExt" sidebar="true" showHeader="false">
+<apex:form >
+
+<apex:pageBlock mode="maindetail">
+
+<apex:pageBlockSection showHeader="true" collapsible="false" columns="2">
+
+<apex:outputLabel value="RS 1000" for="thethousands"/>
+<apex:inputText value="{!thousands}" id="thethousands"/>
+<apex:outputLabel value="RS 100" for="thehundreads"/>
+<apex:inputText value="{!hundreads}" id="thehundreads"/>
+
+<apex:pageBlockSectionItem >
+<apex:commandButton action="{!amount}" id="AmountButton" style="display: none;"/>
+<apex:outputText title="Amount" value="{!amt}" />
+</apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock> 
+
+</apex:form>  
+</apex:page>
